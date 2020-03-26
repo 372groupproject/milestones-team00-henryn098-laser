@@ -1,0 +1,5 @@
+Book: The Dart Programming Language by Gilad Bracha (https://books.google.com/books?hl=en&lr=&id=UHAlCwAAQBAJ&oi=fnd&pg=PT13&dq=dart+programming+language&ots=Po5Pb2I8FN&sig=2b_2isJ0kajgW1f5LUY6fYzD7es#v=onepage&q=dart%20programming%20language&f=false)
+Website: https://dart.dev/
+Reference Manual: https://dart.dev/guides
+Community: https://gitter.im/dart-lang/home
+Major Project: Flutter (software development kit for mobile, web, and desktop)
