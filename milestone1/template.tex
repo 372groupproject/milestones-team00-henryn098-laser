@@ -2,7 +2,7 @@
 
 
 \usepackage{arxiv}
-
+\usepackage{cite}
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage{hyperref}       % hyperlinks
@@ -69,19 +69,19 @@
 \section{Introduction}
 
 \section{History}
-\label{sec:headings}
-Dart made its first appearance in 2011. At the time of its creation, Elixir and Kotlin were released the same year. A year later, TypeScript was released by Microsoft. The language was essentially designed to solve the frustrations of JavaScript at the time. Created at Google by Lars Bak and Kasper Lund, Dart is an optionally typed object-oriented language.
-can act as a superset of JavaScript with the dart2js compiler. It included optional static type analysis. Fast forward to 2015 and JavaScript received an incredible improvement in ECMAScript 6 (ES6). Something something Flutter increasing popularity and competing with React Native
-runs faster than vanilla JavaScript
-- Needed to replace JavaScript (before ES6) -> pushed JavaScript to evolve
+Dart first appeared in 2011 with Elixir and Kotlin. A year later, TypeScript was released by Microsoft. The language was essentially designed to solve the frustrations of JavaScript at the time. Created at Google by Lars Bak and Kasper Lund, Dart is an optionally typed object-oriented language.
+Dart can act as a superset of JavaScript with the dart2js compiler which included optional static type analysis. Dart is known in the community as the JavaScript killer, partly due to the large increase in popularity of Flutter, Google’s UI framework for building native interfaces in iOS and Android.
 
-In 2020, Dart is used for Flutter as it seems to be...
+\begin{figure}[h]
+\includegraphics[scale=.45]{dart usage.png} \\
+\textit {
+The recent popularity of Dart, coupled with its ongoing support and use in upcoming Google projects makes Dart a compelling language
+}
+\end{figure}
 
-References => https://www.codementor.io/blog/worst-languages-to-learn-3phycr98zk, https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
+Flutter is a major project that allows AOT (Ahead of time) and JIT (Just in Time) compilation. This leads to innovative development with hot-reload and a smoother UX. In addition, Flutter is able to render 120 fps on supported devices. Flutter is ran via the Dart platform, and Google is continuing to build and support Dart and Flutter. In 2016 Google began using dart to create a new operating system, Fuchsia, which is rumored to possibly replace the Android operating system.
 
-Why it matters?
-- Flutter is a major project that allows AOT (Ahead of time) and JIT (Just in Time) compilation. This leads to innovative development with hot-reload (reference?) and a smoother UX. Something something 60/120 fps on supported devices
-
+\begin{comment}
 \paragraph{Task modeling.}
 We approach this task as a regression problem. For every item and shop pair, we need to predict its next month sales(a number).
 
@@ -97,6 +97,7 @@ We approach this task as a regression problem. For every item and shop pair, we 
 
 \paragraph{Paragraph}
 \lipsum[7]
+\end{comment}
 
 \section{Control Structures}
 \label{sec:others}
@@ -200,33 +201,18 @@ We approach this task as a regression problem. For every item and shop pair, we 
 In the Sales train dataset, it only provides the sale within one day, but we need to predict the sale of next month. So we sum the day's sale into month's sale group by item, shop, date(within a month).
 In the Sales train dataset, it only contains two columns(item id and shop id). Because we need to provide the sales of next month, we add a date column for it, which stand for the date information of next month.
 \end{comment}
-
-\bibliographystyle{unsrt}  
-%\bibliography{references}  %%% Remove comment to use the external .bib file (using bibtex).
+\bibliographystyle{plain}  
+\bibliography{references}
+\printbibliography
+%%% Remove comment to use the external .bib file (using bibtex).
 %%% and comment out the ``thebibliography'' section.
 
 
 %%% Comment out this section when you \bibliography{references} is enabled.
-\begin{thebibliography}{1}
-\begin{comment}
-\bibitem{kour2014real}
-George Kour and Raid Saabne.
-\newblock Real-time segmentation of on-line handwritten arabic script.
-\newblock In {\em Frontiers in Handwriting Recognition (ICFHR), 2014 14th
-  International Conference on}, pages 417--422. IEEE, 2014.
+%\begin{thebibliography}{1}
 
-\bibitem{kour2014fast}
-George Kour and Raid Saabne.
-\newblock Fast classification of handwritten on-line arabic characters.
-\newblock In {\em Soft Computing and Pattern Recognition (SoCPaR), 2014 6th
-  International Conference of}, pages 312--318. IEEE, 2014.
-
-\bibitem{hadash2018estimate}
-Guy Hadash, Einat Kermany, Boaz Carmeli, Ofer Lavi, George Kour, and Alon
-  Jacovi.
-\newblock Estimate and replace: A novel approach to integrating deep neural
-  networks with existing applications.
-\newblock {\em arXiv fd arXiv:1804.09028}, 2018.
-\end{comment}
-\end{thebibliography}
+%\begin{comment}
+%\newblock {\em arXiv fd arXiv:1804.09028}, 2018.
+%\end{comment}
+%\end{thebibliography}
 \end{document}
