@@ -2,6 +2,8 @@ Book: The Dart Programming Language by Gilad Bracha (https://books.google.com/bo
 Website: https://dart.dev/
 https://en.wikipedia.org/wiki/Google_Fuchsia
 https://medium.com/dartlang/dart-2-stable-and-the-dart-web-platform-3775d5f8eac7
+https://insights.dice.com/2019/03/27/fall-rise-dart-google-javascript-killer/
+https://en.wikipedia.org/wiki/Dart_(programming_language)
 Reference Manual: https://dart.dev/guides
 Community: https://gitter.im/dart-lang/home
 Major Project: Flutter (software development kit for mobile, web, and desktop)
