@@ -1,6 +1,9 @@
 /*this is a small example program which
-uses a combination of dart specific control structures
+uses a combination of dart control structures
 to show the basic flow of the logic in the language
+
+If you are familiar with java and c style control
+then this will look extremely familliar
 
 it is based on an introductory first year
 programming assignment called "guess the number"
@@ -9,16 +12,30 @@ programming assignment called "guess the number"
 import 'dart:io';
 import 'dart:math';//for random
 
+//max and min guesses, inclusive
 int MAX = 10;
 int MIN = 1;
 main(){
     print("In this game you will guess " +
-      "a number between $MAX and $MIN inclusive");
+          "a number between" +
+          "\n$MIN and $MAX inclusive");
     Random rng = new Random();
+    int guess;
+    int target;
+    bool gameIsOver;
 
-    print("I'm thinking of a number... time to guess!");
-    int randNum = rng.nextInt(MAX+1);
-    print(getInput());
+    do{
+      gameIsOver = false;
+      print("I'm thinking of a number... time to guess!");
+      target = rng.nextInt(MAX) + 1;
+      while (!gameIsOver){
+        guess = getInput();
+        gameIsOver = gameOver(target, guess);
+      }
+      print("do you want to play again? y/n");
+    }while(stdin.readLineSync() == "y");
+
+    print("goodbye!");
 }
 
 /*getInput
@@ -45,6 +62,7 @@ int getInput(){
       print(error);
       continue;
     }
+    //check if num in range
     if (numInput >= MIN && numInput <= MAX){
       valid = true;
     }
@@ -55,9 +73,19 @@ int getInput(){
   return numInput;
 }
 
+///takes int target and int guess,
+///the target number and the user's guess
+///lets the user know if the target is higher or lower
+///returns true if the number has been guessed, else false*/
 bool gameOver(int target, int guess){
   if (guess < target){
-    print("the number is higher")
+    print("the number is higher");
+  }else if (guess > target){
+    print("the number is lower");
+  }else{
+    print("you got it, you're so clever!");
+    return true;
   }
+  return false;
 }
 
