@@ -32,9 +32,7 @@ main(){
         guess = getInput();
         gameIsOver = gameOver(target, guess);
       }
-      print("do you want to play again? y/n");
-    }while(stdin.readLineSync() == "y");
-
+    }while(!quitGame());
     print("goodbye!");
 }
 
@@ -89,3 +87,21 @@ bool gameOver(int target, int guess){
   return false;
 }
 
+//quitGame
+//takes no inputs, and returns a boolean
+//uses stdin to ask the user if they would like to quit
+//returns true if they want to quit
+//else false
+//calls itself on invalid input
+bool quitGame(){
+  print("do you want to play again? y/n");
+  String input = stdin.readLineSync();
+  switch (input) {
+    case "y":
+      return false;
+    case "n":
+      return true;
+    default:
+      return quitGame();
+  }
+}
