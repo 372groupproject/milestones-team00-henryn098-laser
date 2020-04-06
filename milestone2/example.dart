@@ -69,7 +69,7 @@ int getInput(){
       }
       */
     //for loop example of above:
-    for (int i = MIN; i < Max+1; i++){
+    for (int i = MIN; i < MAX+1; i++){
       if (numInput == i){
         valid = true;
       }
