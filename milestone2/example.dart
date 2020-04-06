@@ -109,7 +109,7 @@ bool quitGame(){
   String input = stdin.readLineSync();
   switch (input) {
     case "y":
-      return false;
+      return false;//its false that they want to quit
     case "n":
       return true;
     default:
