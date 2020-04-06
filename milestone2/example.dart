@@ -25,15 +25,16 @@ main(){
     bool gameIsOver;
 
     do{
+      //set up game
       gameIsOver = false;
       print("I'm thinking of a number... time to guess!");
       target = rng.nextInt(MAX) + 1;
+      //run game
       while (!gameIsOver){
         guess = getInput();
         gameIsOver = gameOver(target, guess);
       }
     }while(!quitGame());
-    print("goodbye!");
 }
 
 /*getInput
@@ -111,6 +112,7 @@ bool quitGame(){
     case "y":
       return false;//its false that they want to quit
     case "n":
+      print("goodbye!");
       return true;
     default:
       return quitGame();
