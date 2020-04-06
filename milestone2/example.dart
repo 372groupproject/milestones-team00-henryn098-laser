@@ -61,12 +61,23 @@ int getInput(){
       continue;
     }
     //check if num in range
+    /*the following code is equivalent to
     if (numInput >= MIN && numInput <= MAX){
       valid = true;
+      else {
+        print(error);
+      }
+      */
+    //for loop example of above:
+    for (int i = MIN; i < Max+1; i++){
+      if (numInput == i){
+        valid = true;
+      }
     }
-    else{
+    if (valid == false){
       print(error);
     }
+    //end obfuscated code example
   }
   return numInput;
 }
