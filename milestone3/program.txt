@@ -1,1 +1,7 @@
-test test test boats n' ...
+Our program will implement a famous "game" called Conway's game of Life.
+Look up the game of life on youtube, it is beautiful complexity arising from a simple set of rules.
+The reason we are thinking about doing this program, is because the implementation itself is quite simple.
+This will give us room to explore the reason this language is currently backed by google: it works cross platform.
+The main thing that we will be doing in this project is demonstrating that it runs both as a mobile app, and 
+works on a browser, with the same code.
+The program's core will be simple, and so we will get to explore what makes this language powerful.
