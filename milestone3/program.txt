@@ -5,3 +5,6 @@ This will give us room to explore the reason this language is currently backed b
 The main thing that we will be doing in this project is demonstrating that it runs both as a mobile app, and 
 works on a browser, with the same code.
 The program's core will be simple, and so we will get to explore what makes this language powerful.
+
+we expect this to be about 300 lines of code at its core (mostly ui)
+and are not sure what the cross platform bit will entail yet.
