@@ -1,12 +1,19 @@
 /*since dart has as many types as you need, and lets
 you create new ones on a whim, This program will 
 demonstrate that you can create a new data type
-and use it with all the more basic types covered*/
+and use it with all the more basic types covered
+
+dart has dozens of types, not even including libraries not included in the core*/
 
 import 'dart:io';
+
+//a new object type, counter
 class Counter{
+  //has fields
   num totalCount = 0;
   Map countMap = new Map();
+
+  //and methods
 
   //updates the count of items recieved in lists
   updateCount(String s){
@@ -30,10 +37,12 @@ class Counter{
 }
 
 class TypingTracker{
+  //uses two counters to keep track of different string types
   Counter wordCounter = new Counter();
   Counter letterCounter = new Counter();
 
   updateCounters(String input){
+    //counts the string types
     List inputList = input.split(' ');
     for (String word in inputList){
       wordCounter.updateCount(word);
@@ -47,6 +56,8 @@ class TypingTracker{
   }
 
   printStats(){
+    //prints total words and total letters,
+    // calls methods from the counter class
     print("total words typed so far:");
     print(wordCounter.getTotalCount());
     print("total letters typed so far:");
@@ -64,6 +75,8 @@ class TypingTracker{
   }
 
   printWordStats(String word){
+    //prints stats about how many times a word has appeared,
+    //and how many of each of the letters in that word have appeared
     var count;
     count = nullToZero(wordCounter.getCount(word));
     print("$word has appeared $count times");
@@ -77,21 +90,28 @@ class TypingTracker{
 }
 
 main(){
+  //user instructions
   print('''TYPE SENTENCES, AND I WILL KEEP TRACK OF THE WORDS,
   TYPE A SINGLE WORD TO SEE MORE DETAILED STATS
   TYPE /QUIT TO QUIT!!!''');
+
+  //tick type game engine
   TypingTracker tt = new TypingTracker();
   String s = "";
   while(s!="/quit"){
     s = stdin.readLineSync();
+    //check for single word, for stat display
     if(!s.contains(' ') || s == ' '){
       tt.printWordStats(s);
     }
     else{
+      //updates counters
+      //displays current stats
       tt.updateCounters(s);
       tt.printStats();
     }
   }
+  //quit
   print("THANK YOU FOR YOUR KIND WORDS");
   
 }
