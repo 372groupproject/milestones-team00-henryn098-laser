@@ -1,6 +1,8 @@
 import 'p4_classes2.dart';
 import 'p4_interface.dart';
-class StudentContainer implements Display{
+class StudentContainer implements Display{ 
+  //the implement keyword dictates this must define all methods defined in
+  //the display class
   List<Student> studentList;
 
   StudentContainer(){

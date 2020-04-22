@@ -1,7 +1,8 @@
 import 'p4_classes.dart';
 
-//in dart, a mixin is a function which can be
-//implemented in multiple classes using the "with" keyword\
+//in dart, a mixin is a class of functions which can be
+//implemented in multiple classes using the "with" keyword
+//it allows for orthogonal, backwards, and multiple inheritance
 mixin ConvertGrade {
   num letterToGpa(String grade){
     switch (grade) {
