@@ -13,6 +13,14 @@ class Person{
     this.birthday = birthday;
   }
 
+  //the call method is a special method in dart
+  //when this class, or any of its subclass objects are called directly
+  //ie studentObject()
+  //it will print this statement
+  call(){
+    print("This is a person");
+  }
+
   get age{
     return DateTime.now().difference(birthday).inDays/365;
   }

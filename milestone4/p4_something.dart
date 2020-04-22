@@ -14,9 +14,10 @@ class StudentContainer implements Display{
   //this method must be implemented
   void displayGrades(){
     //sort by gpa
-    studentList.sort((a,b) => a.gpa.compareTo(b.gpa));
+    studentList.sort((a,b) => a.gpa.compareTo(b.gpa)); //example of fat arrow
     print("GPA for students, highest to lowest:");
     for (Student student in studentList.reversed){
+      //example of named parameter subroutine
       print("${student.firstName} ${student.lastName}: ${student.gpa}");
     }
   }
@@ -36,6 +37,10 @@ class StudentContainer implements Display{
 
 main(){
   StudentContainer students = populateContainer();
+  print("calling a student object directly with dart's special \"call\" method");
+  print("the call method is defined in the person class:");
+  students.studentList[0]();
+  print("");
   students.displayStudents();
   print("");
   students.displayGrades();
