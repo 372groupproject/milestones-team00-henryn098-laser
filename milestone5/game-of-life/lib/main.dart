@@ -138,16 +138,9 @@ class _MyHomePageState extends State<MyHomePage> {
             border: Border.all(color: Colors.black, width: 0.5),
             color: board.cellAt(y, x).toString() == 'X' ? Colors.amber[600] : Colors.red
           ),
-          child: Center(
-            child: _buildGridItem(x, y),
-          ),
         ),
       ),
     );
-  }
-
-  Widget _buildGridItem(int x, int y) {
-    //return Text(board.cellAt(y, x).toString());
   }
 
   Widget _buildGameBody() {
@@ -172,11 +165,10 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(8.0),
           margin: const EdgeInsets.all(8.0),
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.red, width: 2.0)
+            border: Border.all(color: Colors.blue, width: 2.0)
           ),
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              //childAspectRatio: 0.5,
               crossAxisCount: gridSize,
             ),
             itemBuilder: _buildGridItems,
@@ -184,10 +176,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         )),
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [appFooter()]),
+        /*TextField(
+
+        ),*/
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Slider(
             min: 0,
-            max: 5,
+            max: 2,
             value: delay.toDouble(),
             onChanged: (value) {
               setState(() {
@@ -203,7 +198,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget appFooter() {
     return Container(
       child: Material(
-        //elevation: 4.0,
         borderRadius: BorderRadius.all(Radius.circular(6.0)),
         child: Wrap( 
           direction: Axis.horizontal,                    
@@ -251,19 +245,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  /*
-
-              Slider(
-              min: 0,
-              max: 5,
-              value: 1,
-              onChanged: (value) {
-                setState(() {
-                  delay = value.floor();
-                });
-              },
-            )*/
-
   @override
   Widget build(BuildContext context) { // equivalent to render in React
     // This method is rerun every time setState is called, for instance as done
@@ -279,7 +260,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: _buildGameBody(),
-      //floatingActionButton: Row(mainAxisAlignment: MainAxisAlignment.center, children: [appFooter()]),
     );
   }
 }
