@@ -64,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   CellContainer board;
   bool isPaused = false;
   //bool isGameOver = false;
+  int delay = 1;
 
   // init board
   _MyHomePageState() {
@@ -74,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void runGame() async {
     while (!isGameOver()) {
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(Duration(seconds: delay));
 
       if (!isPaused) {
         tick(); // update the board 
@@ -181,14 +182,28 @@ class _MyHomePageState extends State<MyHomePage> {
             itemBuilder: _buildGridItems,
             itemCount: gridSize * gridSize,
           ),
-        ))
+        )),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [appFooter()]),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Slider(
+            min: 0,
+            max: 5,
+            value: delay.toDouble(),
+            onChanged: (value) {
+              setState(() {
+                delay = value.floor();
+              });
+            },
+          ),
+        ]),
+        Text("Delay")
     ]);
   }
 
   Widget appFooter() {
     return Container(
       child: Material(
-        elevation: 4.0,
+        //elevation: 4.0,
         borderRadius: BorderRadius.all(Radius.circular(6.0)),
         child: Wrap( 
           direction: Axis.horizontal,                    
@@ -230,26 +245,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(fontSize: 20.0),
               ),
             ),
-            FlatButton(
-              color: Colors.blue,
-              textColor: Colors.white,
-              disabledColor: Colors.grey,
-              disabledTextColor: Colors.black,
-              padding: EdgeInsets.all(8.0),
-              splashColor: Colors.blueAccent,
-              onPressed: () {
-                /*...*/
-              },
-              child: Text(
-                "Speed",
-                style: TextStyle(fontSize: 20.0),
-              ),
-            ),
           ],
         ),
       ),
     );
   }
+
+  /*
+
+              Slider(
+              min: 0,
+              max: 5,
+              value: 1,
+              onChanged: (value) {
+                setState(() {
+                  delay = value.floor();
+                });
+              },
+            )*/
 
   @override
   Widget build(BuildContext context) { // equivalent to render in React
@@ -266,7 +279,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: _buildGameBody(),
-      floatingActionButton: Row(mainAxisAlignment: MainAxisAlignment.center, children: [appFooter()]),
+      //floatingActionButton: Row(mainAxisAlignment: MainAxisAlignment.center, children: [appFooter()]),
     );
   }
 }
