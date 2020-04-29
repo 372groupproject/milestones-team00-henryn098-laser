@@ -1,10 +1,12 @@
 /*this is a container class to hold cells,
 it makes up the board on which the cells will
 live and die*/
-import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
+
 import 'cell.dart';
 
-class CellContainer{
+class CellContainer {
   List<List<Cell>> board;
   int rows;
   int maxRowIdx;
@@ -40,7 +42,7 @@ class CellContainer{
     if (col > maxColIdx || row > maxRowIdx
       ||col < 0 || row < 0){
         return false;
-      }
+    }
     return cellAt(col, row).isAlive;
   }
 

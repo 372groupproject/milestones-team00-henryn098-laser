@@ -1,7 +1,9 @@
 import 'cell.dart';
 import 'cellContainer.dart';
-int ROWS=10;
-int COLS=10;
+
+int ROWS=4;
+int COLS=4;
+
 CellContainer board;
 
 main(){
@@ -10,7 +12,6 @@ main(){
   board = configBoardTestGlider();
   //run game
   runGame(board);
-
 }
 
 runGame(CellContainer board){
@@ -56,29 +57,4 @@ bool cellState(Cell cell, int neighbors){
     return false;
   }
   return false; //catchall, should never logically hit
-}
-
-CellContainer configBoardTestRepeatingLine(){
-  CellContainer board = new CellContainer(COLS,ROWS);
-  board.cellAt(5,5).alive = true;
-  board.cellAt(4,5).alive = true;
-  board.cellAt(6,5).alive = true;
-  return board;
-}
-
-CellContainer configBoardTest2cell(){
-  CellContainer board = new CellContainer(3,4);
-    board.cellAt(1,1).alive = true;
-    board.cellAt(1,2).alive = true;
-  return board;
-}
-
-CellContainer configBoardTestGlider(){
-  CellContainer board = new CellContainer(COLS, ROWS);
-    board.cellAt(1,0).alive = true;
-    board.cellAt(2,1).alive = true;
-    board.cellAt(3,0).alive = true;
-    board.cellAt(3,1).alive = true;
-    board.cellAt(3,2).alive = true;
-  return board;
 }

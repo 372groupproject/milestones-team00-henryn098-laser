@@ -1,7 +1,7 @@
-//the object which represents some cell at x,y in
-//some matrix for the game of life
-import 'dart:io';
-class Cell{
+/*the object which represents some cell at x,y in
+some matrix for the game of life*/
+
+class Cell {
   bool alive;
   int x;
   int y;
