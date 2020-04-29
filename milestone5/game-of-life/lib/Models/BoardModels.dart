@@ -1,4 +1,5 @@
-import 'package:gameoflife/CellContainer.dart';
+import 'package:gameoflife/Models/CellContainer.dart';
+import 'dart:math';
 
 CellContainer configBoardTestRepeatingLine(int cols, int rows){
   CellContainer board = new CellContainer(cols,rows);
@@ -23,4 +24,10 @@ CellContainer configBoardTestGlider(int cols, int rows){
     board.cellAt(3,1).alive = true;
     board.cellAt(3,2).alive = true;
   return board;
+}
+
+CellContainer randomBoard(int cols, int rows) {
+  List<CellContainer> boards = [configBoardTestRepeatingLine(cols, rows), configBoardTest2cell(), configBoardTestGlider(cols, rows)];
+  
+  return boards[Random().nextInt(3)];
 }

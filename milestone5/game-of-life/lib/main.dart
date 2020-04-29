@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gameoflife/CellContainer.dart';
-import 'package:gameoflife/ConfigBoards.dart';
+import 'package:gameoflife/Models/cell.dart';
+import 'package:gameoflife/Models/CellContainer.dart';
+import 'package:gameoflife/Models/BoardModels.dart';
 
 //import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 //import 'package:splashscreen/splashscreen.dart';
@@ -57,26 +58,84 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final int gridSize = 10;
+  final int ROWS = 10;
+  final int COLS = 10;
+
   CellContainer board;
+  bool isPaused = false;
+  //bool isGameOver = false;
 
   // init board
   _MyHomePageState() {
-    board = configBoardTestGlider(gridSize, gridSize);
+    board = configBoardTestGlider(ROWS, COLS);
+
+    runGame();
+  }
+
+  void runGame() async {
+    while (!isGameOver()) {
+      await Future.delayed(Duration(seconds: 1));
+
+      if (!isPaused) {
+        tick(); // update the board 
+      }
+    }
+  }
+
+  // do a lazy scan of the entire board
+  bool isGameOver() {
+    return false;
+  }
+
+  //the method which drives the game
+  void tick() {
+    Cell currCell;
+    Cell newCell;
+    CellContainer newBoard = new CellContainer(ROWS, COLS);
+
+    for (int r = 0; r < board.maxRowIdx; r++){
+      for (int c = 0; c < board.maxColIdx; c++){
+        currCell = board.cellAt(c,r);
+        newCell  = newBoard.cellAt(c,r);
+        newCell.alive = 
+          cellState(currCell, board.countNeighbors(currCell));
+      }
+    }
+
+    setState(() {
+      board = newBoard;
+    });
+  }
+
+  /*returns a cell state based on the number of neighbors,
+  and whether or not the cell is currently alive*/
+  bool cellState(Cell cell, int neighbors){
+    //underpopulation
+    if (neighbors < 2 || neighbors > 3){
+      return false;
+    }
+    if (neighbors == 2){
+      return cell.isAlive;
+    }
+    if (neighbors == 3){
+      return true;
+    }
+    return false; //catchall, should never logically hit
   }
 
   Widget _buildGridItems(BuildContext context, int index) {
     int x, y = 0;
 
-    x = (index / gridSize).floor();
-    y = (index % gridSize);
+    x = (index / ROWS).floor();
+    y = (index % ROWS);
 
     return GestureDetector(
       //onTap: () => _gridItemTapped(x, y),
       child: GridTile(
         child: Container(
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 0.5)
+            border: Border.all(color: Colors.black, width: 0.5),
+            color: board.cellAt(y, x).toString() == 'X' ? Colors.amber[600] : Colors.red
           ),
           child: Center(
             child: _buildGridItem(x, y),
@@ -87,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buildGridItem(int x, int y) {
-    return Center(child: Text(board.cellAt(y, x).toString()));
+    //return Text(board.cellAt(y, x).toString());
   }
 
   Widget _buildGameBody() {
@@ -126,6 +185,72 @@ class _MyHomePageState extends State<MyHomePage> {
     ]);
   }
 
+  Widget appFooter() {
+    return Container(
+      child: Material(
+        elevation: 4.0,
+        borderRadius: BorderRadius.all(Radius.circular(6.0)),
+        child: Wrap( 
+          direction: Axis.horizontal,                    
+          children: <Widget>[
+            FlatButton(
+              disabledColor: Colors.grey,
+              disabledTextColor: Colors.black,
+              padding: EdgeInsets.all(8.0),
+              splashColor: Colors.blueAccent,
+              onPressed: () {
+                isPaused = false;
+              },
+              child: Icon(Icons.play_arrow, color: Colors.green, size: 24.0),
+            ),
+            FlatButton(
+              disabledColor: Colors.grey,
+              disabledTextColor: Colors.black,
+              padding: EdgeInsets.all(8.0),
+              splashColor: Colors.blueAccent,
+              onPressed: () {
+                isPaused = true;
+              },
+              child: Icon(Icons.pause, color: Colors.green, size: 24.0),
+            ),
+            FlatButton(
+              textColor: Colors.black,
+              disabledColor: Colors.grey,
+              disabledTextColor: Colors.black,
+              padding: EdgeInsets.all(8.0),
+              splashColor: Colors.blueAccent,
+              onPressed: () {
+                setState(() {
+                  board = randomBoard(COLS, ROWS);
+                });
+                //runGame();
+              },
+              child: Text(
+                "Random",
+                style: TextStyle(fontSize: 20.0),
+              ),
+            ),
+            FlatButton(
+              color: Colors.blue,
+              textColor: Colors.white,
+              disabledColor: Colors.grey,
+              disabledTextColor: Colors.black,
+              padding: EdgeInsets.all(8.0),
+              splashColor: Colors.blueAccent,
+              onPressed: () {
+                /*...*/
+              },
+              child: Text(
+                "Speed",
+                style: TextStyle(fontSize: 20.0),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) { // equivalent to render in React
     // This method is rerun every time setState is called, for instance as done
@@ -141,6 +266,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: _buildGameBody(),
+      floatingActionButton: Row(mainAxisAlignment: MainAxisAlignment.center, children: [appFooter()]),
     );
   }
 }

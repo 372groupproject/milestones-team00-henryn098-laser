@@ -2,8 +2,6 @@
 it makes up the board on which the cells will
 live and die*/
 
-import 'package:flutter/cupertino.dart';
-
 import 'cell.dart';
 
 class CellContainer {
