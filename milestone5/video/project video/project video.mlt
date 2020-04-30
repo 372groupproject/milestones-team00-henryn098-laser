@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mlt LC_NUMERIC="C" version="6.21.0" title="Shotcut version 20.04.12" producer="playlist0">
+  <profile description="automatic" width="1280" height="720" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="1280" display_aspect_den="720" frame_rate_num="30" frame_rate_den="1" colorspace="601"/>
+  <producer id="producer0" in="00:00:00.000" out="00:01:02.433">
+    <property name="length">00:01:02.467</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Adam/Documents/GitHub/milestones-team00-henryn098-laser/milestone5/video/clips/flutter.mkv</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2020-04-30T04:05:22</property>
+    <property name="shotcut:hash">5ce1a4a617ed4ace687ce4469d9fca39</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer1" in="00:00:00.000" out="00:01:13.467">
+    <property name="length">00:01:13.500</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Adam/Documents/GitHub/milestones-team00-henryn098-laser/milestone5/video/clips/Intro_and_why_dart.mkv</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2020-04-30T04:05:22</property>
+    <property name="shotcut:hash">8a303037198c08c598b5f2990d2b0377</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer2" in="00:00:00.000" out="00:00:21.733">
+    <property name="length">00:00:21.767</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Adam/Documents/GitHub/milestones-team00-henryn098-laser/milestone5/video/clips/outro.mov</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2020-04-30T03:49:19</property>
+    <property name="shotcut:hash">1273ee29c743895ee905741ab1d05d49</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer3" in="00:00:00.000" out="00:00:37.033">
+    <property name="length">00:00:37.067</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Adam/Documents/GitHub/milestones-team00-henryn098-laser/milestone5/video/clips/project_demo_1.mkv</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2020-04-30T04:05:22</property>
+    <property name="shotcut:hash">ba31b7acbcbbb75a4bdb0d71ea0404a6</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer4" in="00:00:00.000" out="00:00:30.733">
+    <property name="length">00:00:30.767</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Adam/Documents/GitHub/milestones-team00-henryn098-laser/milestone5/video/clips/project_demo_mobile.mp4</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2020-04-30T03:15:42</property>
+    <property name="shotcut:hash">a2416248d12c7a2ede474a9bba183869</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer5" in="00:00:00.000" out="00:01:44.833">
+    <property name="length">00:01:44.867</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Adam/Documents/GitHub/milestones-team00-henryn098-laser/milestone5/video/clips/Quirks and life intro take 2.mov</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2020-04-30T03:54:29</property>
+    <property name="shotcut:hash">ae0e8ff0c6bd98f0798d4eb98c140ded</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <playlist id="playlist0" title="Shotcut version 20.04.12">
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">1</property>
+    <entry producer="producer0" in="00:00:00.000" out="00:01:02.433"/>
+    <entry producer="producer1" in="00:00:00.000" out="00:01:13.467"/>
+    <entry producer="producer2" in="00:00:00.000" out="00:00:21.733"/>
+    <entry producer="producer3" in="00:00:00.000" out="00:00:37.033"/>
+    <entry producer="producer4" in="00:00:00.000" out="00:00:30.733"/>
+    <entry producer="producer5" in="00:00:00.000" out="00:01:44.833"/>
+  </playlist>
+</mlt>
