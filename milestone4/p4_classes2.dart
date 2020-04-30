@@ -24,7 +24,8 @@ mixin ConvertGrade {
   }
 
   //some other function, there can be many
-  void someFunc(){;}
+  void someFunc(){
+    var hello;}
 }
 
 //an example of a class which inherits from the person class

@@ -4,6 +4,8 @@ the only difference is that a subclass must
 provide concrete implementation of all functions*/
 
 class Display{
-  void displayGrades(){}
+  void displayGrades(){
+    /*this doesnt have to be empty*/
+    }
   void displayStudents(){}
 }
