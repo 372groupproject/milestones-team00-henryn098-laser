@@ -27,7 +27,7 @@ CellContainer configBoardTestGlider(int cols, int rows){
 }
 
 CellContainer randomBoard(int cols, int rows) {
-  List<CellContainer> boards = [configBoardTestRepeatingLine(cols, rows), configBoardTest2cell(), configBoardTestGlider(cols, rows)];
+  List<CellContainer> boards = [configBoardTestRepeatingLine(cols, rows), configBoardTestGlider(cols, rows)];
   
-  return boards[Random().nextInt(3)];
+  return boards[Random().nextInt(2)];
 }
